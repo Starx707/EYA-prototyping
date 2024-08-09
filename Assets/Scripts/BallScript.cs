@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class BallScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Rigidbody rb;
 
-    // Update is called once per frame
-    void Update()
+   public void normalAngularDrag()
     {
-        
+        rb.angularDrag = 8;
+        Debug.Log("Anglular drag normalized");
     }
 }

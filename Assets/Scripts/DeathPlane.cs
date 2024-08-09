@@ -10,17 +10,15 @@ public class DeathPlane : MonoBehaviour
 
     private void OnTriggerEnter(Collider GameObject)
     {
-        if (GameObject.GetComponent<PlayerMovement>())
+        if (GameObject.CompareTag("Player"))
         {
+            Debug.Log("Player respawned");
             GameObject.transform.position = _respawnPlayer.transform.position;
         }
         else if (GameObject.CompareTag("Ball"))
         {
+            Debug.Log("Ball respawned");
             GameObject.transform.position = _respawnPlayer.transform.position;
-        }
-        else if (GameObject.CompareTag("TestBall"))
-        {
-            GameObject.transform.position = _respawnOfTestBall.position;
         }
     }
 }

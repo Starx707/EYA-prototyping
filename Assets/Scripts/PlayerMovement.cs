@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] CharacterController _characterC;
     [SerializeField] float _speed = 4.5f;
+    public float GetSpeed() { return _speed; }
+    public void SetSpeed(float s) { _speed = s; }
+
     float _smoothTurnTime = 0.1f;
     float _smoothVelocity;
 

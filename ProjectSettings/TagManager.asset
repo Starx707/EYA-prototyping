@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ball
   - TestBall
+  - CinemachineTarget
+  - Sand
   layers:
   - Default
   - TransparentFX
