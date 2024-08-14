@@ -7,9 +7,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] CharacterController _characterC;
     [SerializeField] float _speed = 4.5f;
-    public float GetSpeed() { return _speed; }
-    public void SetSpeed(float s) { _speed = s; }
-
     float _smoothTurnTime = 0.1f;
     float _smoothVelocity;
 
@@ -24,18 +21,18 @@ public class PlayerMovement : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical);
 
-        //if (Input.GetKeyDown(KeyCode.LeftShift))
-        //{
-        //    _speed = _speed + 2;
-        //}
-        //else if (Input.GetKeyUp(KeyCode.LeftShift))
-        //{
-        //    _speed = _speed - 2;
-        //}
-
-        if (direction.magnitude >= 0.1f)
+        if (Input.GetKeyDown(KeyCode.LeftShift)) //lame kind of sprint and works just fine
         {
-            float targetAngle = 0; //Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _camera.eulerAngles.y;
+            _speed = _speed + 2;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            _speed = _speed - 2;
+        }
+
+        if (direction.magnitude >= 0.1f) 
+        {
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _camera.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _smoothVelocity, _smoothTurnTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
@@ -43,4 +40,6 @@ public class PlayerMovement : MonoBehaviour
             _characterC.Move(moveDirection.normalized * _speed * Time.deltaTime);
         }
     }
+
+    
 }

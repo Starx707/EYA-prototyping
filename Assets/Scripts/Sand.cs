@@ -16,6 +16,7 @@ public class Sand : MonoBehaviour
         if (obj.CompareTag("Ball")) //perhaps do this in ball itself
         {
             _ballSlowedDown = true;
+            //float _ballAngularDrag = obj.GetComponent<Rigidbody>().angularDrag; //use to check what the angular drag is
             if (_ballSlowedDown == true && obj.GetComponent<Rigidbody>().angularDrag == 8) 
             { 
                 obj.GetComponent<Rigidbody>().angularDrag = 16f;

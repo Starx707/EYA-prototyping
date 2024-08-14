@@ -9,6 +9,5 @@ public class BallScript : MonoBehaviour
    public void normalAngularDrag()
     {
         rb.angularDrag = 8;
-        Debug.Log("Anglular drag normalized");
     }
 }
