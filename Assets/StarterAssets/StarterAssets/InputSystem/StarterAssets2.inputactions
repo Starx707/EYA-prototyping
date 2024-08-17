@@ -44,7 +44,7 @@
             ],
             "bindings": [
                 {
-                    "name": "Movement",
+                    "name": "Arrows",
                     "id": "b7594ddb-26c9-4ba2-bd5a-901468929edc",
                     "path": "2DVector(mode=1)",
                     "interactions": "",

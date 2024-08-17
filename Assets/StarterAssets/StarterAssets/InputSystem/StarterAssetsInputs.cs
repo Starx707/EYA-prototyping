@@ -49,6 +49,7 @@ namespace StarterAssets
 		public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
+			Debug.Log(move); //check if there is any input
 		} 
 
 		public void LookInput(Vector2 newLookDirection)

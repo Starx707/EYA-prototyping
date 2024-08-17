@@ -104,7 +104,7 @@ namespace StarterAssets
         private Animator _animator;
         private CharacterController _controller;
         private StarterAssetsInputs _input;
-        private GameObject _mainCamera;
+        public GameObject _mainCamera;
 
         private const float _threshold = 0.01f;
 
@@ -123,14 +123,14 @@ namespace StarterAssets
         }
 
 
-        private void Awake()
-        {
-            // get a reference to our main camera
-            if (_mainCamera == null)
-            {
-                _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-            }
-        }
+        //private void Awake()
+        //{
+        //    // get a reference to our main camera
+        //    if (_mainCamera == null)
+        //    {
+        //        _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        //    }
+        //}
 
         private void Start()
         {
@@ -222,6 +222,8 @@ namespace StarterAssets
             // if there is no input, set the target speed to 0
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;
 
+            ///>>>>> Issue isn't in here
+            
             // a reference to the players current horizontal velocity
             float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
 
